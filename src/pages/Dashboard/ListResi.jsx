@@ -110,7 +110,8 @@ export default function ListResiPage() {
       alert(
         `Import selesai: ${res.data.inserted} inserted, ${res.data.skipped} skipped`
       );
-      fetchData(); // reload data
+      fetchData();
+      setFile(null)
     } catch (err) {
       console.error(err);
       alert("Import gagal");
@@ -187,31 +188,31 @@ export default function ListResiPage() {
   return (
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-        <h1 className="ml-14 md:ml-0 text-3xl md:text-4xl font-bold text-teal-700">
+        <h1 className="ml-14 md:ml-0 text-3xl md:text-4xl font-bold  bg-clip-text text-transparent bg-linear-to-b from-[#0490BB] to-[#006C68]">
           Daftar Resi
         </h1>
-        <p className="text-lg md:text-xl font-semibold text-orange-500">
+        <p className="text-lg md:text-xl font-semibold text-[#ff7d0b]">
           {getHariIni()}, {formatDate(currentDate)}
         </p>
       </div>
 
       <div className="relative">
-        <Search className="absolute left-4 top-3.5 text-orange-400" size={20} />
+        <Search className="absolute left-4 top-3.5 text-[#ffb471]" size={20} />
         <input
           type="text"
           placeholder="Cari resi / nama barang / nama toko..."
           value={searchTerm}
           onChange={(e) => handleSearch(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && applySearch()}
-          className="w-full pl-12 pr-4 py-3 border-2 border-orange-400 rounded-lg focus:outline-none focus:border-orange-500 bg-white"
+          className="w-full pl-12 pr-4 py-3 border-2 border-[#ffb471] rounded-lg focus:outline-none focus:border-[#ff7d0b] bg-white"
         />
       </div>
 
       <div className="space-y-4">
-        <h3 className="text-lg font-bold text-teal-700">Filter</h3>
+        <h3 className="text-lg font-bold text-[#006c68]">Filter</h3>
         <div className="grid md:grid-cols-4 gap-4">
           <div>
-            <label className="block text-teal-700 font-semibold mb-2">
+            <label className="block text-[#006c68] font-semibold mb-2">
               Jasa Kirim
             </label>
             <input
@@ -219,12 +220,12 @@ export default function ListResiPage() {
               placeholder="JNE/SiCepat/J&T"
               value={filters.jasa}
               onChange={(e) => setFilters({ ...filters, jasa: e.target.value })}
-              className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-teal-600"
+              className="w-full px-4 py-2 border-2 border-[#e6f0f0] rounded-lg focus:outline-none focus:border-teal-600 text-[#96c3c1]"
             />
           </div>
 
           <div>
-            <label className="block text-teal-700 font-semibold mb-2">
+            <label className="block text-[#006c68] font-semibold mb-2">
               Tanggal Mulai
             </label>
             <input
@@ -234,11 +235,11 @@ export default function ListResiPage() {
               onChange={(e) =>
                 setFilters({ ...filters, start: e.target.value })
               }
-              className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-teal-600"
+              className="w-full px-4 py-2 border-2 border-[#e6f0f0] rounded-lg focus:outline-none focus:border-teal-600 text-[#96c3c1]"
             />
           </div>
           <div>
-            <label className="block text-teal-700 font-semibold mb-2">
+            <label className="block text-[#006c68] font-semibold mb-2">
               Tanggal Akhir
             </label>
             <input
@@ -246,20 +247,20 @@ export default function ListResiPage() {
               placeholder="DD / MM / YY"
               value={filters.end}
               onChange={(e) => setFilters({ ...filters, end: e.target.value })}
-              className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-teal-600"
+              className="w-full px-4 py-2 border-2 border-[#e6f0f0] rounded-lg focus:outline-none focus:border-teal-600 text-[#96c3c1]"
             />
           </div>
 
           <div className="flex gap-2 items-end">
             <button
               onClick={() => applyFilter()}
-              className="flex-1 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 rounded-lg transition-colors cursor-pointer"
+              className="flex-1 bg-linear-to-r from-[#FF9334] to-[#FFB834] hover:bg-orange-600 text-white font-semibold py-2 rounded-lg transition-colors cursor-pointer"
             >
               Terapkan Filter
             </button>
             <button
               onClick={() => resetFilter()}
-              className="flex-1 border-2 border-orange-500 text-orange-500 hover:bg-orange-300 font-semibold py-2 rounded-lg transition-colors cursor-pointer"
+              className="flex-1 border-2  from-[#FF9334] to-[#FFB834] border-orange-500 text-orange-500 hover:bg-orange-300 font-semibold py-2 rounded-lg transition-colors cursor-pointer"
             >
               Reset Filter
             </button>
@@ -270,11 +271,11 @@ export default function ListResiPage() {
         <div className="flex gap-2 pt-4 justify-end">
           <button
             onClick={handleExport}
-            className="flex items-center gap-2 border-2 border-teal-600 text-teal-600 hover:bg-teal-50 font-semibold py-2 px-4 rounded-lg transition-colors cursor-pointer"
+            className="flex items-center gap-2 border-2 border-[#2b8582] text-[#2b8582] hover:bg-teal-50 font-semibold py-2 px-4 rounded-lg transition-colors cursor-pointer"
           >
             <Download size={18} /> Export CSV
           </button>
-          <label className="border-2 space-x-4 border-teal-600 text-teal-600 py-2 px-2 rounded-lg hover:bg-teal-50">
+          <label className="border-2 space-x-4 border-[#2b8582] text-[#2b8582] py-2 px-2 rounded-lg hover:bg-teal-50 font-semibold cursor-pointer">
             <Upload size={18} className="inline-block mr-2" />
             <span>Import CSV</span>
             <input
@@ -302,7 +303,7 @@ export default function ListResiPage() {
       {/* Table */}
       <div className="overflow-x-auto bg-white rounded-lg shadow">
         <table className="w-full text-sm">
-          <thead className="bg-teal-700 text-white">
+          <thead className="bg-linear-to-b from-[#0490BB] to-[#006C68] text-white">
             <tr>
               {/* <th className="px-4 py-3 text-left font-semibold">No.</th> */}
               <th className="px-4 py-3 text-left font-semibold">Nomor Resi</th>
@@ -313,7 +314,7 @@ export default function ListResiPage() {
               <th className="px-4 py-3 text-left font-semibold">Aksi</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="bg-linear-to-b from-[#FFFFFF] to-[#E2FFFF]">
             {filteredItems.map((item, i) => (
               <tr key={i} className="border-b hover:bg-gray-50">
                 {/* <td className="px-4 py-3">{item.id}</td> */}
@@ -355,7 +356,7 @@ export default function ListResiPage() {
       <div className="flex justify-center">
         <Link
           to="/dashboard/add-resi"
-          className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+          className="bg-linear-to-r from-[#FF9334] to-[#FFB834] hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
         >
           + Tambah Resi
         </Link>

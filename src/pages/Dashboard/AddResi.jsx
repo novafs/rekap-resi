@@ -54,15 +54,15 @@ export default function TambahResiPage() {
 
   return (
     <div className="space-y-8">
-      <h1 className="ml-14 md:ml-0 text-3xl md:text-4xl left-4 font-bold text-teal-700">
+      <h1 className="ml-14 md:ml-0 text-3xl md:text-4xl left-4 font-bold text-transparent bg-clip-text bg-linear-to-b from-[#0490BB] to-[#006C68]">
         Tambah Resi
       </h1>
 
       <div className="grid lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2 bg-blue-50 p-8 rounded-lg">
+        <div className="lg:col-span-2 bg-[#F1FFFF] p-8 rounded-lg">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label className="block text-teal-700 font-semibold mb-2">
+              <label className="block text-[#006c68] font-semibold mb-2">
                 Nomor Resi
               </label>
               <input
@@ -71,13 +71,13 @@ export default function TambahResiPage() {
                 placeholder="Masukkan nomor resi..."
                 value={formData.nomor_resi}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-teal-600 bg-white"
+                className="w-full px-4 py-3 border-2 border-[#e6f0f0] rounded-lg focus:outline-none focus:border-teal-600 bg-white"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-teal-700 font-semibold mb-2">
+              <label className="block text-[#006c68] font-semibold mb-2">
                 Nama Barang
               </label>
               <input
@@ -86,13 +86,13 @@ export default function TambahResiPage() {
                 placeholder="Masukkan nama barang..."
                 value={formData.nama_barang}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-teal-600 bg-white"
+                className="w-full px-4 py-3 border-2 border-[#e6f0f0] rounded-lg focus:outline-none focus:border-teal-600 bg-white"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-teal-700 font-semibold mb-2">
+              <label className="block text-[#006c68] font-semibold mb-2">
                 Nama Toko
               </label>
               <input
@@ -101,13 +101,13 @@ export default function TambahResiPage() {
                 placeholder="Masukkan nama toko..."
                 value={formData.nama_toko}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-teal-600 bg-white"
+                className="w-full px-4 py-3 border-2 border-[#e6f0f0] rounded-lg focus:outline-none focus:border-teal-600 bg-white"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-teal-700 font-semibold mb-2">
+              <label className="block text-[#006c68] font-semibold mb-2">
                 Jasa Kirim
               </label>
               <input
@@ -116,29 +116,29 @@ export default function TambahResiPage() {
                 placeholder="JNE/SiCepat/J&T"
                 value={formData.jasa_kirim}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-teal-600 bg-white"
+                className="w-full px-4 py-3 border-2 border-[#e6f0f0] rounded-lg focus:outline-none focus:border-teal-600 bg-white"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-teal-700 font-semibold mb-2">
+              <label className="block text-[#006c68] font-semibold mb-2">
                 Tanggal
               </label>
               <input
                 type="date"
                 name="tanggal"
-                placeholder="DD / MM / YY"
+                placeholder="DD / MM / YYYY"
                 value={formData.tanggal}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-teal-600 bg-white"
+                className="w-full px-4 py-3 border-2 border-[#e6f0f0] rounded-lg focus:outline-none focus:border-teal-600 bg-white"
                 required
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-lg transition-colors"
+              className="w-full bg-linear-to-b from-[#0490BB] to-[#006C68] hover:bg-[#00423f] text-white font-semibold py-3 rounded-lg transition-colors cursor-pointer"
             >
               Simpan
             </button>

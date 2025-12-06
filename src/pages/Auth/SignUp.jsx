@@ -46,7 +46,7 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-teal-600 to-teal-700 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-linear-to-b from-[#0490BB] to-[#006C68] flex items-center justify-center p-4">
       <div className="absolute top-8 left-8">
         <div className="text-white">
           <h1 className="text-3xl font-bold">Rekap</h1>
@@ -57,11 +57,11 @@ export default function SignupPage() {
       <div className="w-full max-w-5xl bg-white rounded-3xl overflow-hidden shadow-2xl">
         <div className="grid md:grid-cols-2 gap-0">
           <div className="bg-gray-50 p-8 md:p-12 flex flex-col justify-center">
-            <h2 className="text-4xl font-bold text-teal-700 mb-8">Daftar</h2>
+            <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-linear-to-b from-[#0490BB] to-[#006C68] mb-8">Daftar</h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-teal-700 font-semibold mb-2">
+                <label className="block text-[#006c68] font-semibold mb-2">
                   Nama Toko
                 </label>
                 <input
@@ -70,13 +70,13 @@ export default function SignupPage() {
                   placeholder="Masukkan nama toko..."
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-teal-300 rounded-lg focus:outline-none focus:border-teal-600 placeholder-gray-400"
+                  className="w-full px-4 py-3 border-2 border-[#96c3c1] rounded-lg focus:outline-none focus:border-teal-600 placeholder-[#96c3c1]"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-teal-700 font-semibold mb-2">
+                <label className="block text-[#006c68] font-semibold mb-2">
                   Email
                 </label>
                 <input
@@ -85,13 +85,13 @@ export default function SignupPage() {
                   placeholder="Masukkan email..."
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-teal-300 rounded-lg focus:outline-none focus:border-teal-600 placeholder-gray-400"
+                  className="w-full px-4 py-3 border-2 border-[#96c3c1] rounded-lg focus:outline-none focus:border-teal-600 placeholder-[#96c3c1]"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-teal-700 font-semibold mb-2">
+                <label className="block text-[#006c68] font-semibold mb-2">
                   Password
                 </label>
                 <input
@@ -100,24 +100,24 @@ export default function SignupPage() {
                   placeholder="Masukkan password..."
                   value={formData.password}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-teal-300 rounded-lg focus:outline-none focus:border-teal-600 placeholder-gray-400"
+                  className="w-full px-4 py-3 border-2 border-[#96c3c1] rounded-lg focus:outline-none focus:border-teal-600 placeholder-[#96c3c1]"
                   required
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-lg transition-colors"
+                className="cursor-pointer w-full bg-linear-to-b from-[#0490BB] to-[#006C68] hover:bg-[#006c68] text-white font-semibold py-3 rounded-lg transition-colors"
               >
                 Daftar
               </button>
             </form>
 
-            <p className="mt-6 text-center text-gray-600">
+            <p className="mt-6 text-center text-[#006c68]">
               Sudah punya akun?{" "}
               <Link
                 to="/sign-in"
-                className="text-teal-600 font-semibold hover:underline"
+                className="text-[#006c68] font-semibold hover:underline"
               >
                 Masuk disini
               </Link>

@@ -19,7 +19,7 @@ export default function Sidebar({ onClose }) {
   };
 
   return (
-    <aside className="h-full bg-teal-700 text-white flex flex-col overflow-y-auto">
+    <aside className="h-full bg-linear-to-b from-[#0490BB] to-[#006C68] text-white flex flex-col overflow-y-auto">
       <div className="p-4 md:p-6 pt-16 shrink-0 justify-center">
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-4">
@@ -53,8 +53,8 @@ export default function Sidebar({ onClose }) {
                 !isActive("list-resi") &&
                 !isActive("add-resi") &&
                 !isActive("scan-resi")
-                  ? "bg-orange-500 hover:bg-orange-600 text-[#004C49]"
-                  : "hover:bg-teal-600 text-white"
+                  ? "bg-linear-to-r from-[#FF9334] to-[#FFB834] hover:bg-orange-600 text-[#004c49]"
+                  : "hover:[#2b8582] text-white"
               }`}
             >
               <BarChart3 size={20} />
@@ -129,7 +129,7 @@ export default function Sidebar({ onClose }) {
               }
             })
           }
-          className="w-full border border-white text-white py-1 md:py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-red-500 hover:border-red-400 transition font-medium text-sm md:text-base cursor-pointer"
+          className="w-full border border-white text-white py-3 md:py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-red-500 hover:border-red-400 transition font-medium text-sm md:text-base cursor-pointer"
         >
           <LogOut size={18} />
           Keluar

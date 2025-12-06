@@ -116,17 +116,17 @@ export default function Dashboard() {
             />
           </div>
           <div className="flex-1 md:w-auto">
-            <h1 className="text-3xl md:text-4xl sm: font-bold text-teal-700 mb-4">
+            <h1 className="text-3xl md:text-4xl sm: font-bold text-transparent bg-clip-text bg-linear-to-b from-[#0490BB] to-[#006C68] mb-4">
               Selamat Datang!
             </h1>
-            <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl mb-4">
+            <p className="text-sm md:text-base text-[#2b8582] leading-relaxed max-w-xl mb-4">
               Kelola dan pantau seluruh nomor resi Anda dengan mudah. Sistem ini
               membantu mencatat, mengarsipkan, dan memonitor setiap pengiriman
               secara terstruktur.
             </p>
           </div>
           <div className="text-right w-full lg:w-auto">
-            <p className="text-lg md:text-2xl font-semibold text-orange-500">
+            <p className="text-lg md:text-2xl font-semibold text-[#ff7d0b">
               {getHariIni()}, {formatDate(currentDate)}
             </p>
           </div>
@@ -161,12 +161,12 @@ export default function Dashboard() {
           />
         </div>
         <div>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between text-teal-700 pb-4 gap-3 sm:gap-0 flex-shrink-0">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between text-[#2b8582] pb-4 gap-3 sm:gap-0 flex-shrink-0">
             <h3 className="text-base md:text-2xl font-semibold">
               Overview Daftar Resi
             </h3>
             <Link to="/dashboard/add-resi">
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 md:px-6 py-2 rounded-lg font-medium transition flex items-center gap-2 text-sm md:text-base whitespace-nowrap">
+              <button className="bg-linear-to-r from-[#FF9334] to-[#FFB834] hover:bg-[#9c4c07] text-white px-4 md:px-6 py-2 rounded-lg font-medium transition flex items-center gap-2 text-sm md:text-base whitespace-nowrap cursor-pointer">
                 + Tambah Resi
               </button>
             </Link>

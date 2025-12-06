@@ -1,5 +1,7 @@
 "use client";
 
+import './index.css'
+
 import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
 import { useState } from "react";
 import SignInPage from "./pages/Auth/SignIn.jsx";

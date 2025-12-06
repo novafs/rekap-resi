@@ -205,7 +205,7 @@ export default function ScanResiPage() {
         </div>
       )}
 
-      <h1 className="ml-14 md:ml-0 text-3xl md:text-4xl font-bold text-teal-700">
+      <h1 className="ml-14 md:ml-0 text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-b from-[#0490BB] to-[#006C68]">
         Scan Resi
       </h1>
 
@@ -220,14 +220,14 @@ export default function ScanResiPage() {
         </div>
 
         <div className="md:col-span-2">
-          <h2 className="text-2xl font-bold text-teal-700 mb-4">
+          <h2 className="text-2xl font-bold text-[#006c68] mb-4">
             Fokus ke kolom Nomor Resi
           </h2>
-          <p className="text-gray-600 mb-4">
+          <p className="text-[#006c68] mb-4">
             Gunakan barcode scanner atau kamera untuk mengisi kolom Nomor Resi
             secara otomatis.
           </p>
-          <ul className="space-y-2 text-gray-600">
+          <ul className="space-y-2 text-[#006c68]">
             <li>• Pastikan kursor sudah berada di kolom Nomor Resi.</li>
             <li>• Cek kembali sebelum menekan tombol Simpan.</li>
             <li>• Gunakan filter di halaman Daftar Resi untuk mencari data.</li>
@@ -238,7 +238,7 @@ export default function ScanResiPage() {
       <div className="bg-blue-50 p-8 rounded-lg">
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
-            <label className="block text-teal-700 font-semibold mb-2">
+            <label className="block text-[#006c68] font-semibold mb-2">
               Nomor Resi
             </label>
 
@@ -251,7 +251,7 @@ export default function ScanResiPage() {
                 placeholder="Nomor Resi"
                 value={formData.nomor}
                 onChange={handleChange}
-                className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg bg-white text-gray-600 w-full"
+                className="flex-1 px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-[#96c3c1] w-full"
                 required
                 disabled
               />
@@ -260,12 +260,12 @@ export default function ScanResiPage() {
               <button
                 type="button"
                 onClick={() => setShowScanner(true)}
-                className="bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white font-semibold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-colors whitespace-nowrap"
+                className="bg-linear-to-r from-[#FF9334] to-[#FFB834] hover:bg-orange-600 active:bg-orange-700 text-white font-semibold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-colors whitespace-nowrap cursor-pointer"
               >
                 <Camera size={18} /> Scan Kamera
               </button>
 
-              <label className="cursor-pointer bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white font-semibold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-colors whitespace-nowrap">
+              <label className="cursor-pointer bg-linear-to-r from-[#FF9334] to-[#FFB834] hover:bg-orange-600 active:bg-orange-700 text-white font-semibold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-colors whitespace-nowrap">
                 <Upload size={18} /> Upload Resi
                 <input
                   type="file"
@@ -278,7 +278,7 @@ export default function ScanResiPage() {
 
             {/* Courier Detected */}
             {currentCourier && (
-              <div className="mt-2 inline-flex items-center gap-1.5 text-sm text-teal-700 bg-teal-50 px-3 py-1.5 rounded-lg">
+              <div className="mt-2 inline-flex items-center gap-1.5 text-sm text-[#006c68] bg-teal-50 px-3 py-1.5 rounded-lg">
                 <span>✓ Terdeteksi:</span>
                 <span className="font-semibold">{currentCourier.label}</span>
               </div>
@@ -288,7 +288,7 @@ export default function ScanResiPage() {
           {/* 2 Column Inputs */}
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-teal-700 font-semibold mb-2">
+              <label className="block text-[#006c68] font-semibold mb-2">
                 Nama Barang
               </label>
               <input
@@ -297,13 +297,13 @@ export default function ScanResiPage() {
                 placeholder="Masukkan nama barang"
                 value={formData.barang}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg bg-white"
+                className="w-full px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-[#96c3c1]"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-teal-700 font-semibold mb-2">
+              <label className="block text-[#006c68] font-semibold mb-2">
                 Jasa Kirim
               </label>
               <input
@@ -312,12 +312,12 @@ export default function ScanResiPage() {
                 value={formData.jasa}
                 onChange={handleChange}
                 placeholder="Masukkan jasa pengiriman"
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg bg-white"
+                className="w-full px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-[#96c3c1]"
               />
             </div>
 
             <div>
-              <label className="block text-teal-700 font-semibold mb-2">
+              <label className="block text-[#006c68] font-semibold mb-2">
                 Nama Toko
               </label>
               <input
@@ -326,13 +326,13 @@ export default function ScanResiPage() {
                 placeholder="Masukkan nama toko"
                 value={formData.toko}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg bg-white"
+                className="w-full px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-[#96c3c1]"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-teal-700 font-semibold mb-2">
+              <label className="block text-[#006c68] font-semibold mb-2">
                 Tanggal
               </label>
               <input
@@ -340,7 +340,7 @@ export default function ScanResiPage() {
                 name="tanggal"
                 value={formData.tanggal}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg bg-white"
+                className="w-full px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-[#96c3c1]"
                 required
               />
             </div>
@@ -349,7 +349,7 @@ export default function ScanResiPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-lg"
+            className="w-full bg-teal-600 hover:bg-[#006c68] text-white font-semibold py-3 rounded-lg"
           >
             {loading ? "Menyimpan..." : "Simpan Resi"}
           </button>
