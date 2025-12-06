@@ -213,7 +213,7 @@ export default function ScanResiPage() {
         <div className="flex justify-center">
           <div className="w-48 h-48 bg-blue-100 rounded-full flex items-center justify-center">
             <img
-              src="/src/assets/images/qr-code-scan.png"
+              src="https://res.cloudinary.com/denw4pbvf/image/upload/v1765012758/qr-code-scan_zcc1ja.png"
               className="w-32 h-32 object-contain"
             />
           </div>

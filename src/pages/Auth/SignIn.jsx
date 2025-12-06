@@ -107,7 +107,7 @@ export default function SignInPage() {
 
           <div className="hidden md:flex bg-white items-center justify-center p-8">
             <img
-              src="/src/assets/images/delivery-person.png"
+              src="https://res.cloudinary.com/denw4pbvf/image/upload/v1765012759/delivery-person_lztufv.png"
               className="w-full h-auto object-contain max-h-96"
             />
           </div>

@@ -110,7 +110,7 @@ export default function Dashboard() {
         <div className="flex flex-col lg:flex-row items-start lg:items-center sm:grid-cols-2 justify-between gap-6 bg-white rounded-2xl shadow-sm pr-12">
           <div className="shrink-0 md:w-48">
             <img
-              src="/src/assets/images/delivery-person-mirror.png"
+              src="https://res.cloudinary.com/denw4pbvf/image/upload/v1765012758/delivery-person-mirror_u2reuw.png"
               alt="Welcome illustration"
               className="w-full h-auto object-cover rounded-lg"
             />

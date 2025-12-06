@@ -15,17 +15,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Auth Routes
-      // <Route path="/login" element={<LoginPage setIsAuthenticated={setIsAuthenticated} />} />
-      // <Route path="/signup" element={<SignupPage setIsAuthenticated={setIsAuthenticated} />} />
-
-      {/* Dashboard Routes */}
-        {/* <Route path="/dashboard/*" element={isAuthenticated ? <DashboardLayout /> : <Navigate to="/login" />}>
-        <Route index element={<Dashboard />} />
-        <Route path="daftar-resi" element={<ListResi />} />
-        <Route path="tambah-resi" element={<AddResi />} />
-        <Route path="scan-resi" element={<ScanResi />} />
-      </Route> */}
         <Route
           path="/dashboard/*"
           element={
@@ -35,6 +24,7 @@ export default function App() {
           }
         >
           <Route index element={<Dashboard />} />
+          <Route path="*" element={<Navigate to="/dashboard"/>} />
           <Route path="list-resi" element={<ListResiPage />} />
           <Route path="add-resi" element={<AddResiPage />} />
           <Route path="scan-resi" element={<ScanResiPage />} />
@@ -42,8 +32,7 @@ export default function App() {
         <Route path="/sign-in" element={<SignInPage />} />
         <Route path="/sign-up" element={<SignupPage />} />
 
-        {/* Redirect to login on root */}
-        <Route path="/*" element={<Navigate to="/dashboard"/>} />
+        <Route path="/*" element={<Navigate to="/sign-in"/>} />
       </Routes>
     </BrowserRouter>
   );
