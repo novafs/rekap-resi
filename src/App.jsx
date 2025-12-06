@@ -43,7 +43,7 @@ export default function App() {
         <Route path="/sign-up" element={<SignupPage />} />
 
         {/* Redirect to login on root */}
-        {/* <Route path="/" element={<Navigate to={isAuthenticated ? "/dashboard" : "/login"} />} /> */}
+        <Route path="/*" element={<Navigate to="/dashboard"/>} />
       </Routes>
     </BrowserRouter>
   );
