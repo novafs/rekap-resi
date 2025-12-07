@@ -6,78 +6,6 @@ import BarcodeScanner from "react-qr-barcode-scanner";
 import { BrowserQRCodeReader } from "@zxing/browser";
 import api from "../../api/api";
 
-// =====================
-// COURIER MASTER DATA
-// =====================
-const COURIERS = [
-  {
-    id: "jnt",
-    label: "J&T Express",
-    prefixes: ["JX", "JT"],
-    keywords: ["J&T", "JNT", "J&T EXPRESS"],
-  },
-  { id: "jne", label: "JNE", prefixes: ["JP", "JNE"], keywords: ["JNE"] },
-  { id: "sicepat", label: "SiCepat", prefixes: ["SC"], keywords: ["SICEPAT"] },
-  {
-    id: "anteraja",
-    label: "AnterAja",
-    prefixes: ["ANTER", "ADR"],
-    keywords: ["ANTERAJA"],
-  },
-  {
-    id: "pos",
-    label: "POS Indonesia",
-    prefixes: ["R", "POS"],
-    keywords: ["POS"],
-  },
-  {
-    id: "idexp",
-    label: "ID Express",
-    prefixes: ["ID"],
-    keywords: ["ID EXPRESS"],
-  },
-  {
-    id: "spx",
-    label: "Shopee Express",
-    prefixes: ["SPX", "SHOPEE"],
-    keywords: ["SPX", "SHOPEE"],
-  },
-  {
-    id: "lazada",
-    label: "Lazada Logistics",
-    prefixes: ["LXAD", "LZD", "LZX"],
-    keywords: ["LXAD", "LZD", "LZX", "LAZADA"],
-  },
-  {
-    id: "ninja",
-    label: "Ninja Xpress",
-    prefixes: ["NJVTT", "NJVT", "NV"],
-    keywords: ["NINJA"],
-  },
-];
-
-function detectCourierFromResi(resi) {
-  if (!resi) return null;
-  const upper = resi.toUpperCase();
-
-  return (
-    COURIERS.find((c) => c.prefixes.some((p) => upper.startsWith(p))) || null
-  );
-}
-
-function detectCourierFromName(name) {
-  if (!name) return null;
-  const upper = name.toUpperCase();
-
-  return (
-    COURIERS.find(
-      (c) =>
-        upper.includes(c.id.toUpperCase()) ||
-        upper.includes(c.label.toUpperCase()) ||
-        (c.keywords && c.keywords.some((k) => upper.includes(k)))
-    ) || null
-  );
-}
 
 export default function ScanResiPage() {
   const userData = JSON.parse(localStorage.getItem("user"));
@@ -96,19 +24,19 @@ export default function ScanResiPage() {
   const [showScanner, setShowScanner] = useState(false);
   const [file, setFile] = useState(null);
 
-  const currentCourier =
-    detectCourierFromName(formData.jasa) ||
-    detectCourierFromResi(formData.nomor);
+  // const currentCourier =
+  //   detectCourierFromName(formData.jasa) ||
+  //   detectCourierFromResi(formData.nomor);
 
-  useEffect(() => {
-    if (!formData.nomor) return;
-    if (formData.jasa) return;
+  // useEffect(() => {
+  //   if (!formData.nomor_resi) return;
+  //   if (formData.jasa_kirim) return;
 
-    const detected = detectCourierFromResi(formData.nomor);
-    if (detected) {
-      setFormData((prev) => ({ ...prev, jasa: detected.label }));
-    }
-  }, [formData.nomor]);
+  //   const detected = detectCourierFromResi(formData.nomor_resi);
+  //   if (detected) {
+  //     setFormData((prev) => ({ ...prev, jasa_kirim: detected.label }));
+  //   }
+  // }, [formData.nomor]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -141,8 +69,8 @@ export default function ScanResiPage() {
       if (text) {
         setFormData((prev) => ({
           ...prev,
-          nomor: text,
-          jasa: detectCourierFromResi(text)?.label || prev.jasa,
+          nomor_resi: text,
+          // jasa: detectCourierFromResi(text)?.label || prev.jasa,
         }));
 
         setShowScanner(false);
@@ -172,8 +100,8 @@ export default function ScanResiPage() {
 
           setFormData((prev) => ({
             ...prev,
-            nomor: text,
-            jasa_kirim: detectCourierFromResi(text)?.label || prev.jasa,
+            nomor_resi: text,
+            // jasa_kirim: detectCourierFromResi(text)?.label || prev.jasa,
           }));
 
           setAlert({
@@ -247,9 +175,9 @@ export default function ScanResiPage() {
               {/* Input Field */}
               <input
                 type="text"
-                name="nomor"
+                name="nomor_resi"
                 placeholder="Nomor Resi"
-                value={formData.nomor}
+                value={formData.nomor_resi}
                 onChange={handleChange}
                 className="flex-1 px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-[#96c3c1] w-full"
                 required
@@ -276,13 +204,13 @@ export default function ScanResiPage() {
               </label>
             </div>
 
-            {/* Courier Detected */}
+            {/* Courier Detected
             {currentCourier && (
               <div className="mt-2 inline-flex items-center gap-1.5 text-sm text-[#006c68] bg-teal-50 px-3 py-1.5 rounded-lg">
                 <span>✓ Terdeteksi:</span>
                 <span className="font-semibold">{currentCourier.label}</span>
               </div>
-            )}
+            )} */}
           </div>
 
           {/* 2 Column Inputs */}
@@ -293,9 +221,9 @@ export default function ScanResiPage() {
               </label>
               <input
                 type="text"
-                name="barang"
+                name="nama_barang"
                 placeholder="Masukkan nama barang"
-                value={formData.barang}
+                value={formData.nama_barang}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-[#96c3c1]"
                 required
@@ -308,8 +236,8 @@ export default function ScanResiPage() {
               </label>
               <input
                 type="text"
-                name="jasa"
-                value={formData.jasa}
+                name="jasa_kirim"
+                value={formData.jasa_kirim}
                 onChange={handleChange}
                 placeholder="Masukkan jasa pengiriman"
                 className="w-full px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-[#96c3c1]"
@@ -322,9 +250,9 @@ export default function ScanResiPage() {
               </label>
               <input
                 type="text"
-                name="toko"
+                name="nama_toko"
                 placeholder="Masukkan nama toko"
-                value={formData.toko}
+                value={formData.nama_toko}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-[#96c3c1]"
                 required
