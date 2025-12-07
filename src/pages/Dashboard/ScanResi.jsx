@@ -179,7 +179,7 @@ export default function ScanResiPage() {
                 placeholder="Nomor Resi"
                 value={formData.nomor_resi}
                 onChange={handleChange}
-                className="flex-1 px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-[#96c3c1] w-full"
+                className="flex-1 px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-teal-700 placeholder-[#96c3c1] w-full"
                 required
                 disabled
               />
@@ -225,7 +225,7 @@ export default function ScanResiPage() {
                 placeholder="Masukkan nama barang"
                 value={formData.nama_barang}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-[#96c3c1]"
+                className="w-full px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-teal-700 placeholder-[#96c3c1]"
                 required
               />
             </div>
@@ -240,7 +240,7 @@ export default function ScanResiPage() {
                 value={formData.jasa_kirim}
                 onChange={handleChange}
                 placeholder="Masukkan jasa pengiriman"
-                className="w-full px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-[#96c3c1]"
+                className="w-full px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-teal-700 placeholder-[#96c3c1]"
               />
             </div>
 
@@ -254,7 +254,7 @@ export default function ScanResiPage() {
                 placeholder="Masukkan nama toko"
                 value={formData.nama_toko}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-[#96c3c1]"
+                className="w-full px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-teal-700 placeholder-[#96c3c1]"
                 required
               />
             </div>
@@ -268,7 +268,7 @@ export default function ScanResiPage() {
                 name="tanggal"
                 value={formData.tanggal}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-[#96c3c1]"
+                className="w-full px-4 py-3 border-2 border-[#6baaa7] rounded-lg bg-white text-teal-700 placeholder-[#96c3c1]"
                 required
               />
             </div>
