@@ -30,15 +30,6 @@ export default function Sidebar({ onClose }) {
               Resi
             </h1>
           </div>
-          <div className="pt-4">
-            <span className="font-medium text-sm md:text-base text-gray-100">
-              {userData.name}
-            </span>
-            <br />
-            <span className="font-medium text-sm md:text-base text-gray-300">
-              {userData.email}
-            </span>
-          </div>
 
           <span className="mt-5 w-full outline outline-[0.10px] outline-white" />
         </div>
@@ -67,7 +58,7 @@ export default function Sidebar({ onClose }) {
             <div
               className={`rounded-lg mb-4 px-4 py-3 flex items-center gap-3 cursor-pointer transition ${
                 isActive("list-resi")
-                  ? "bg-orange-500 hover:bg-orange-600 text-[#004C49]"
+                  ? "bg-linear-to-r from-[#FF9334] to-[#FFB834] hover:bg-orange-600 text-[#004C49]"
                   : "hover:bg-teal-600 text-white"
               }`}
             >
@@ -82,7 +73,7 @@ export default function Sidebar({ onClose }) {
             <div
               className={`rounded-lg mb-4 px-4 py-3 flex items-center gap-3 cursor-pointer transition ${
                 isActive("add-resi")
-                  ? "bg-orange-500 hover:bg-orange-600 text-[#004C49]"
+                  ? "bg-linear-to-r from-[#FF9334] to-[#FFB834] hover:bg-orange-600 text-[#004C49]"
                   : "hover:bg-teal-600 text-white"
               }`}
             >
@@ -97,7 +88,7 @@ export default function Sidebar({ onClose }) {
             <div
               className={`rounded-lg mb-4 px-4 py-3 flex items-center gap-3 cursor-pointer transition ${
                 isActive("scan-resi")
-                  ? "bg-orange-500 hover:bg-orange-600 text-[#004C49]"
+                  ? "bg-linear-to-r from-[#FF9334] to-[#FFB834] hover:bg-orange-600 text-[#004C49]"
                   : "hover:bg-teal-600 text-white"
               }`}
             >
@@ -109,32 +100,6 @@ export default function Sidebar({ onClose }) {
           </Link>
         </div>
       </nav>
-
-      <div className="p-4 md:p-6 shrink-0">
-        <div className="mb-8 w-full outline outline-[0.20px] outline-white" />
-        <button
-          onClick={() =>
-            Swal.fire({
-              title: "Logout?",
-              text: "Anda yakin ingin keluar dari aplikasi?",
-              icon: "warning",
-              showCancelButton: true,
-              confirmButtonColor: "#dc2626",
-              cancelButtonColor: "#0d9488",
-              confirmButtonText: "Logout",
-              cancelButtonText: "Batal",
-            }).then((result) => {
-              if (result.isConfirmed) {
-                handleLogout()
-              }
-            })
-          }
-          className="w-full border border-white text-white py-3 md:py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-red-500 hover:border-red-400 transition font-medium text-sm md:text-base cursor-pointer"
-        >
-          <LogOut size={18} />
-          Keluar
-        </button>
-      </div>
     </aside>
   );
 }

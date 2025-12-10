@@ -126,7 +126,7 @@ export default function Dashboard() {
             </p>
           </div>
           <div className="text-right w-full lg:w-auto">
-            <p className="text-lg md:text-2xl font-semibold text-[#ff7d0b">
+            <p className="text-lg md:text-2xl font-semibold text-[#ff7d0b]">
               {getHariIni()}, {formatDate(currentDate)}
             </p>
           </div>
