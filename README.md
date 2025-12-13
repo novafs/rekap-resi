@@ -1,5 +1,5 @@
 # Rekap Resi - Project Overview
-**Rekap Resi :** [Rekap Resi](rekap-resi.vercel.app)
+**Website Live View :** [Rekap Resi](rekap-resi.vercel.app)
 
 ## About This Project
 
